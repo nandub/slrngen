@@ -11,7 +11,6 @@ public class SLRNGenerator
   private static final RuntimeException NOT_VALID_EAN_EXCEPTION = new RuntimeException("NOT VALID EAN CODE");
   private static final int min             = 10000000;
   private static final int max             = 99999999;
-  private static final String EAN13_Prefix = "2672";
 
   public static void main(String[] args) 
   {
@@ -56,7 +55,7 @@ public class SLRNGenerator
   
   public static int calc9thDigit(String code)
   {
-    String stringNumber = EAN13_Prefix + code;
+    String stringNumber = SLRNFormat.EAN13_Prefix + code;
     String codeWithoutVd = stringNumber.substring(0, 12);
     int e = sumEven(codeWithoutVd);
     int o = sumOdd(codeWithoutVd);
