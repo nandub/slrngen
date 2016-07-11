@@ -85,7 +85,7 @@ public class SLRNGenerator
   }
 
   private static int getEanVd(int s) {
-      return 10 - (s % 10);
+      return (10 - (s % 10)) % 10;
   }
 
   private static int sumEven(String code) {
